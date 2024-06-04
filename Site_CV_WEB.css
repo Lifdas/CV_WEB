@@ -1,0 +1,376 @@
+#header {
+    background-color: #022B3A;
+    height: 20px;
+    width: 1iem;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('roboto/Roboto-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('roboto/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto';
+    background-color: #e4eef7;
+
+}
+
+#bloc_1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
+.profile-title-container {
+    display: flex;
+    align-items: center;
+    gap: 200px;
+}
+
+
+#photo_profil {
+    width: 40%;
+    height: 40%;
+    border-radius: 10%;
+}/*Je met la photo de profil à gauche */
+
+h1 {
+    font-size: 40px;
+    line-height: 1.2;
+    text-align: left;
+    /* Assure que le texte est aligné à gauche */
+}
+
+h1 span {
+    display: block;
+    /* Assure que chaque span est sur une nouvelle ligne */
+}
+
+.nowrap {
+    white-space: nowrap;
+    /* Empêche le retour à la ligne */
+}
+
+h2 {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10%;
+}
+
+.bouton-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    /* Ajustez la largeur selon vos besoins */
+    padding: 100px;
+}
+
+.tri_bouton {
+    height: 75px;
+    width: 150px;
+    font-size: 20px;
+    text-align: center;
+    background-color: #022B3A;
+    color: #fff;
+    border: none;
+    /* Supprimer les bordures par défaut */
+    border-radius: 50%;
+    cursor: pointer;
+    /* Changer le curseur en pointeur */
+    transition: transform 0.2s ease-in-out;
+    /* Animation pour le grossissement */
+}
+
+/* Au survol du bouton */
+.tri_bouton:hover {
+    background-color: #0273c7;
+    color: #fff;
+    transform: scale(1.2);
+    /* Grossir légèrement le bouton */
+}
+
+#a_propos {
+    margin-right: auto;
+    /* Place le bouton à gauche */
+    margin-left: 10%;
+    /* Espacement par rapport au bord gauche */
+}
+
+#compétences {
+    margin: 0 auto;
+    /* Centre le bouton */
+}
+
+#contact {
+    margin-left: auto;
+    /* Place le bouton à droite */
+}
+
+/* partie bloc 2*/
+#bloc_2 {
+    height: 75vh;
+    background: linear-gradient(to bottom, #e4eef7, #c7e3ff);
+}
+
+.map-container {
+    width: 30%;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.map{
+    width: 100%;
+    height: 300px;
+}
+
+.text-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.right-text {
+    width: 60%;
+    margin-right: 10%;
+    margin-left: 10%;
+    font-size: 25px;
+}
+
+.left-text {
+    margin-top: 20%;
+    width: 100%;
+    margin-left: 5%;
+}
+
+.text-container p {
+    text-align: justify;
+}
+
+
+#bloc_3 {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #c7e3ff, #a3d4fa);
+    font-family: 'Roboto';
+}
+
+.text-and-menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 10%; 
+}
+
+.roue-container {
+    justify-content: center;
+    width: 45%; 
+
+}
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+
+@media (min-width:768px) {
+    .container {
+        width: 900px;
+    }
+}
+
+.container {
+    margin: 10px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-title {
+    margin: 17px auto;
+    text-align: center;
+    color: #fff;
+    font-size: 17px;
+}
+
+.page-title h1 {
+    font-size: 40px;
+    line-height: 1;
+}
+
+.page-title a {
+    color: #ff7777;
+    text-decoration: none;
+}
+
+.page-title a:hover {
+    text-decoration: underline;
+    color: #ff3333;
+}
+
+.circle-menu-box {
+    width: 600px;
+    height: 600px;
+    position: relative;
+    margin-right: 10%;
+}
+
+.circle-menu-box a.menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 50%;
+    margin: 20px;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    color: #777;
+    padding: 0;
+    /* Remove padding */
+    position: absolute;
+    font-size: 30px;
+    transition: all 0.5s;
+}
+
+.circle-menu-box a.menu-item:hover {
+    transform: scale(1.5);
+    color: #fff;
+    background: #3bf563;
+}
+
+.circle-menu-box a.menu-item img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+/* style pour une animation du texte des langages*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+
+/* Styles spécifiques pour deux images dans le même cercle */
+.circle-menu-box a.menu-item.html-css-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-menu-box a.menu-item.html-css-item span.html_css_img {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.circle-menu-box a.menu-item.html-css-item span.html_css_img img {
+    width: 45%;
+    height: 45%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+/* titre du langage sélectionné*/
+.language-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/*Texte concernant le langage sélectionné*/
+.skill-text{
+    font-family: 'Roboto';
+    font-size: 25px;
+    text-align: justify;
+    width: 45%; 
+    margin-left: 5%; 
+}
+
+/* Bloc 4 */
+#bloc_4 {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #a3d4fa, #e4eef7);
+}
+
+#titre_bloc4 {
+    text-align: center;
+    margin-left: 10%;
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    width: 80%;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+#contact-container {
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Espacement entre les éléments de contact */
+}
+
+#phone, #mail {
+    background-color: #fff;
+    height: 250px;
+    width: 30%;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; /* Espacement intérieur */
+    text-align: center;
+    position: relative; /* Nécessaire pour positionner le contact-info */
+}
+
+.contact-header {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px; /* Espacement entre le header et le contenu */
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.contact-info span {
+    font-weight: bold;
+    font-size: 24px; /* Taille de police légèrement plus grande pour le texte du contact */
+}
