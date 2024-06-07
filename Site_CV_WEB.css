@@ -1,9 +1,4 @@
-/*La barre bleu du header*/
-#header {
-    background-color: #022B3A;
-    height: 20px;
-    width: 100vw;
-}
+
 /*Mes polices d'écritures*/
 @font-face {
     font-family: 'Roboto';
