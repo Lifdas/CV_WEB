@@ -593,7 +593,7 @@ ol {
     }
 }
 
-/* Responsive Design for Small Smartphones */
+/* Responsive pour les petits smartphones */
 @media (max-width: 480px) {
     #phone,
     #mail {
