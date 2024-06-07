@@ -11,12 +11,12 @@ document.getElementById('contact').addEventListener('click', function() {
 });
 
 var items = document.querySelectorAll('.circle-menu-box a.menu-item');
-
-for(var i = 0, l = items.length; i < l; i++) {
-  items[i].style.left = (40 - 35*Math.cos(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) + "%";
+// Si je veux faire un affichage en cercle dynamique
+// for(var i = 0, l = items.length; i < l; i++) {
+//   items[i].style.left = (40 - 35*Math.cos(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) + "%";
   
-  items[i].style.top = (40 + 35*Math.sin(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) + "%";
-}
+//   items[i].style.top = (40 + 35*Math.sin(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) + "%";
+// }
 
 // Sélectionnez tous les liens du menu radial
 const menuItems = document.querySelectorAll('.menu-item');
@@ -35,7 +35,7 @@ menuItems.forEach(item => {
         // Utilisez un switch pour déterminer le contenu à afficher en fonction de l'ID du contenu
         switch (contentId) {
             case 'content-js':
-                newContent = "<h3 class='language-title'>Langage JavaScript</h3><p> Le Menu radial de ce site web est codé en Javascript, je sais également créer du HTML et CSS, utiliser Ajax (pour du GET & du POST), fetch API (GET, POST, UPDATE, DELETE) et créer des fonctions dynamiques.";
+                newContent = "<h3 class='language-title'>Langage JavaScript</h3><p> Le Menu de ce site web est codé en Javascript, je sais également créer du HTML et CSS, utiliser Ajax (pour du GET & du POST), fetch API (GET, POST, UPDATE, DELETE) et créer des fonctions dynamiques.";
                 break;
             case 'content-en':
                 newContent = "<h3 class='language-title'>Niveau d'anglais</h3>Anglais B2 pratiqué quotidiennement pour de l'écrit et de l'écoute. How you doing ?";
