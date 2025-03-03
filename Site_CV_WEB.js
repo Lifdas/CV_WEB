@@ -13,55 +13,53 @@ document.getElementById('contact').addEventListener('click', function() {
 var items = document.querySelectorAll('.circle-menu-box a.menu-item');
 // Si je veux faire un affichage en cercle dynamique
 // for(var i = 0, l = items.length; i < l; i++) {
-//   items[i].style.left = (40 - 35*Math.cos(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) + "%";
-  
-//   items[i].style.top = (40 + 35*Math.sin(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) + "%";
+//   items[i].style.left = (40 - 35 * Math.cos(-0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+//   items[i].style.top = (40 + 35 * Math.sin(-0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
 // }
 
-// Sélectionnez tous les liens du menu radial
+// Sélection des liens du menu radial
 const menuItems = document.querySelectorAll('.menu-item');
 
-// Sélectionnez le conteneur de texte que vous souhaitez mettre à jour
+// Sélection du conteneur de texte à mettre à jour
 const textContainer = document.querySelector('#dynamic-text');
 
-// Ajoutez un écouteur d'événements de clic à chaque élément du menu
+// Ajout d'un écouteur d'événements de clic à chaque élément du menu
 menuItems.forEach(item => {
     item.addEventListener('click', function(event) {
         event.preventDefault();
 
-        // Récupérez le contenu associé à l'élément cliqué
+        // Récupération du contenu associé à l'élément cliqué
         const contentId = item.getAttribute('data-content-id');
 
-        // Utilisez un switch pour déterminer le contenu à afficher en fonction de l'ID du contenu
+        // Définition du contenu à afficher en fonction de l'ID du contenu
+        let newContent;
         switch (contentId) {
             case 'content-js':
-                newContent = "<h3 class='language-title'>Langage JavaScript</h3><p> Le Menu de ce site web est codé en Javascript, <br>Ajax / fetch API sont devenus une routine. <br> l'ERP de Ferbateq l'utilise à l'aide d'alpine.Js un mini-vue.js like.";
+                newContent = "<h3 class='language-title'>Langage JavaScript</h3><p>Le menu de ce site web est codé en JavaScript.<br> L'Ajax / Fetch API font partie de mes routines.<br> L'ERP de Ferbateq l'utilise grâce à Alpine.js, un mini framework similaire à Vue.js.</p>";
                 break;
             case 'content-en':
-                newContent = "<h3 class='language-title'>Niveau d'anglais</h3>Anglais B2 (860 points au TOEIC)pratiqué quotidiennement pour de l'écrit et de l'écoute. How you doing ?";
+                newContent = "<h3 class='language-title'>Niveau d'anglais</h3><p>Anglais niveau B2 (860 points au TOEIC), pratiqué quotidiennement à l'écrit et à l'écoute. How you doing ?</p>";
                 break;
             case 'content-py':
-                newContent = "<h3 class='language-title'>Langage Python</h3>J'ai codé un casse briques en POO en première année et un small model language (type chat gpt) en seconde année. <br> au cours de la troisième il m'a servi pour confectionner le back end de l'ERP de Ferbateq.";
+                newContent = "<h3 class='language-title'>Langage Python</h3><p>J'ai codé un casse-briques en POO en première année et un petit modèle de langage (type ChatGPT) en seconde année.<br> En troisième année, Python m'a servi à développer le backend de l'ERP de Ferbateq.</p>";
                 break;
             case 'content-sql':
-                newContent = "<h3 class='language-title'>La base de données</h3>Modéliser une BDD élaborée, création, insertion des données est devenu courant dans mon travail, je maitrise les requêtes basiques et quelques unes avancées. (HEIDI SQL / PhpMyAdmin)";
+                newContent = "<h3 class='language-title'>Base de données</h3><p>Modéliser une BDD élaborée, créer et insérer des données font partie de mes compétences.<br> Je maîtrise les requêtes basiques et certaines avancées (HeidiSQL / PhpMyAdmin).</p>";
                 break;
             case 'content-php':
-                newContent = "<h3 class='language-title'>Langage PHP</h3>J'ai réalisé une architecture 4 tiers (couches: présentation, applicative, métiers, accès aux données) à partir de la base que mon formateur a pu mettre au point suite à 10 ans d'expérience, cette base est réutilisable et modulable pour l'adapter à d'autres projets. J'ai également créé de zéro une calculatrice envoyant toutes les opérations en base de données grâce à Ajax, ainsi que des requêtes pour sortir un historique sur la page front où se trouve ma calculatrice.";
+                newContent = "<h3 class='language-title'>Langage PHP</h3><p>J'ai réalisé une architecture en 4 couches (présentation, application, métier, accès aux données) à partir d'une base conçue par mon formateur après 10 ans d'expérience.<br> Cette architecture est réutilisable et modulable pour d'autres projets.<br> J'ai également créé une calculatrice envoyant toutes les opérations en base de données grâce à Ajax, avec un historique des calculs affiché sur la page front.</p>";
                 break;
             case 'content-html-css':
-                newContent = "<h3 class='language-title'>Le HTML & CSS</h3>70 % de ce CV WEB est fait à partir de HTML et CSS, j'ai également eu l'occasion d'apprendre à m'en servir en créant un site vitrine. <br> et la totalité du front de l'ERP de Ferbateq est en Html/css (mais avec Fomantic en Framework)";
+                newContent = "<h3 class='language-title'>HTML & CSS</h3><p>70 % de ce CV web est conçu en HTML et CSS.<br> J'ai aussi créé un site vitrine et développé l'intégralité du front de l'ERP de Ferbateq en HTML/CSS (avec Fomantic Framework).</p>";
                 break;
-            // Ajoutez d'autres cas au besoin
             default:
                 newContent = "Cliquez sur un langage pour en découvrir plus sur moi !";
         }
-        //j'applique l'animation du texte
-        textContainer.classList.remove('fade-in'); // Enlever l'animation si elle est déjà appliquée
-        void textContainer.offsetWidth; // Force le reflow pour permettre de réappliquer l'animation
+
+        // Application de l'animation du texte
+        textContainer.classList.remove('fade-in'); // Supprime l'animation si elle est déjà appliquée
+        void textContainer.offsetWidth; // Force un reflow pour réappliquer l'animation
         textContainer.innerHTML = newContent; // Change le contenu
-        textContainer.classList.add('fade-in'); // Ajouter l'animation
+        textContainer.classList.add('fade-in'); // Ajoute l'animation
     });
 });
-
-
